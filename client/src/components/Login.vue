@@ -4,7 +4,7 @@
       <div class="white elevation-2">
 
         <v-toolbar flat dense class="orange darken-2" dark>
-          <v-toolbar-title>Register</v-toolbar-title>
+          <v-toolbar-title>Login</v-toolbar-title>
         </v-toolbar>
 
         <div class="m-5 pl-5 pr-4 pt-2 pb-2" dark>
@@ -39,8 +39,7 @@
           <v-alert type="success" v-if="reg">
             {{reg}}
           </v-alert>
-          <v-btn @click="register" class="orange darken-2
- mb-5" dark>Register</v-btn>
+          <v-btn @click="login" class="orange darken-2 mb-5" dark>Login</v-btn>
         </div>
       </div>
     </v-flex>
@@ -61,15 +60,14 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        await Authent.register({
+        await Authent.login({
           email: this.email,
           password: this.password
         })
-        this.reg = 'you registred with success !'
       } catch (err) {
-        this.error = err.response.data.error || 'No response from server'
+        this.error = err.response.data.error
         this.alert = true
       }
     }

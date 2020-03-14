@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <router-view/>
+    <v-app class="orange lighten-4">
+      <main>
+      <AppHeader />
+      <v-content fluid>
+        <router-view/>
+      </v-content>
+      </main>
+    </v-app>
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/Header.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AppHeader
+  }
 }
 </script>
 
@@ -18,5 +29,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: #FFE0B2;
 }
 </style>

@@ -9,5 +9,8 @@ module.exports = {
             host: '0.0.0.0',
             port: '3306'
         }
+    },
+    authentication: {
+        jwtSecret: process.env.JWT_SECRET || 'secret'
     }
 }
